@@ -2,15 +2,19 @@
 //  Function to change class for Nav focus
 //----------------------------------------
 focusNav = () => {
-  $(`#navBtn`).css(`color`, `magenta`)
+  $(`#navBtn`).addClass(`focus`)
 }
 blurNav = () => {
-  $(`#navBtn`).css(`color`, `black`)
+  $(`#navBtn`).removeClass(`focus`)
 }
 
 $(() => {
 
-$(`#navBtn`).hover(focusNav, blurNav)//  Make nav items focus when hovered (change class)
+$(`li`).hover(function() {
+  $(this).addClass(`focus`)
+}, function() {
+  $(this).removeClass(`focus`)
+})//  Make nav items focus when hovered (change class)
 
 
 })
