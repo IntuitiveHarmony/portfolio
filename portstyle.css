@@ -1,5 +1,5 @@
 body {
-  background-image: url(`/files/pictures/powershot 7-14 626_Fotor_ inverted.jpg`);
+  background-image: url(`./files/pictures/powershot 7-14 626_Fotor_ inverted.jpg`);
   background-color: cornflowerblue;
 
 }
@@ -9,9 +9,24 @@ ul {
 li {
   display: inline;
 }
-#navBtn {
+/* #navBtn {
   margin: 20px;
+} */
+.navBtn .navPic{
+  border-radius: 100%;
+  float: left;
+  padding: 2px;
+  height: 26px;
+  width: 26px;
+  border: 0;
 }
 .focus {
-  color: magenta;
+  color: cyan;
+  text-shadow: 10px 10px magenta;
+  height: 40px;
+  width: 40px;
+}
+.focusPerm {
+  color: cyan;
+  text-shadow: 10px 10px magenta;
 }
