@@ -1,5 +1,3 @@
-
-
 //-------------
 //  Welcome page
 //-------------
@@ -82,13 +80,22 @@ const loadLinks = () => {
     .addClass(`container`)
     .appendTo(`.main`)
   let $linkHeader = $(`<h3>`)
-    .text(`Here are a few external links`)
+    .text(`Here are some external links`)
     .appendTo($container)
-  let $link = $(`<a>`)
-    .text(`SoundClound`)
+  let $ltext = $(`<p>`)
+    .text(`more to follow if I ever decide to establish more of an online presence`)
+    .appendTo($container)
+  let $gitLink = $(`<a>`)
+    .text(`Github - Intuitive Harmony`)
+    .attr(`href`, `https://github.com/IntuitiveHarmony`)
+    .attr(`target`, `blank`)
+    .appendTo($container)
+  let $soundLink = $(`<a>`)
+    .text(`SoundClound - Invisible Birds`)
     .attr(`href`, `https://soundcloud.com/invisiblebirds`)
     .attr(`target`, `blank`)
     .appendTo($container)
+
 }
 
 
