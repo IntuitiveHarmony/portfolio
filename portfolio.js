@@ -1,8 +1,4 @@
 
-const clearHome = () => {
-  $(`.main`).empty()
-}
-
 
 //-------------
 //  Welcome page
@@ -35,7 +31,7 @@ const loadBio = () => {
     .text(`Constant Exploration`)
     .appendTo($container)
   let $bio = $(`<p>`)
-    .text(`This is where My bio will go`)
+    .text(`This is where my bio will go`)
     .appendTo($container)
 }
 
@@ -45,7 +41,16 @@ const loadBio = () => {
 //--------------
 
 const loadResume = () => {
-
+  clearHome()
+  let $container = $(`<div>`)
+    .addClass(`container`)
+    .appendTo(`.main`)
+  let $resumeHeader = $(`<h3>`)
+    .text(`Varied Work History`)
+    .appendTo($container)
+  let $resume = $(`<p>`)
+    .text(`This is where my resume will go`)
+    .appendTo($container)
 }
 
 
@@ -54,28 +59,58 @@ const loadResume = () => {
 //--------------
 
 const loadProjects = () => {
-
+  clearHome()
+  let $container = $(`<div>`)
+    .addClass(`container`)
+    .appendTo(`.main`)
+  let $projectHeader = $(`<h3>`)
+    .text(`Varied Work History`)
+    .appendTo($container)
+  let $project = $(`<p>`)
+    .text(`This is where my projects will go`)
+    .appendTo($container)
 }
 
 
 //--------------
-//  Resume page
+//  Links page
 //--------------
 
-const loadResume = () => {
-
+const loadLinks = () => {
+  clearHome()
+  let $container = $(`<div>`)
+    .addClass(`container`)
+    .appendTo(`.main`)
+  let $linkHeader = $(`<h3>`)
+    .text(`Here are a few external links`)
+    .appendTo($container)
+  let $link = $(`<a>`)
+    .text(`SoundClound`)
+    .attr(`href`, `https://soundcloud.com/invisiblebirds`)
+    .attr(`target`, `blank`)
+    .appendTo($container)
 }
 
 
 //--------------------------------------------------
 //  Add and remove the text of nav items with hover
 //-------------------------------------------------
+
 const hoverTextAdd = () => {
   $(`.focus`).siblings().show()
 }
 const hoverTextRemove = () => {
   $(`h2`).hide()
   console.log(`txtrm`)
+}
+
+
+//---------------------
+//  Clear main section
+//---------------------
+
+const clearHome = () => {
+  $(`.main`).empty()
 }
 
 
