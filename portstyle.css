@@ -1,32 +1,106 @@
 body {
   background-image: url(`./files/pictures/powershot 7-14 626_Fotor_ inverted.jpg`);
   background-color: cornflowerblue;
+  color: rgb(92, 34, 134);
 
 }
 ul {
   list-style: none;
-}
-li {
   display: inline;
 }
-/* #navBtn {
-  margin: 20px;
-} */
-.navBtn .navPic{
+li img{
+  display: inline;
+
+}
+h2 {
+  display: inline;
+  display: none;
+}
+h3 {
+  clear: left;
+
+  border-radius: 6px;
+  margin-left: 10px;
+
+  padding: 7px;
+  font-family: Fantasy;
+}
+/* -------------------------------
+    styles for the links
+  ------------------------------ */
+a {
+  text-decoration: none;
+}
+
+/* -------------------------------
+    styles for the containers
+  ------------------------------ */
+.header {
+  color: rgb(92, 34, 134);
+  text-shadow: 3px 7px 6px RGB(255, 20, 147), 0px 0px 2px darkviolet;
+  background-color: RGBa(0, 191, 255, 0.9);
+  border: 0px solid mediumblue;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(77, 77, 0, 0.7), 0 6px 20px 6px rgba(100, 20, 211, 0.6);
+  padding: 3px 20px;
+  font-family: Fantasy;
+
+}
+.container {
+  clear: left;
+  border: 0px solid mediumblue;
+  border-radius: 6px;
+  margin-left: 10px;
+  box-shadow: 0 4px 8px 0 rgba(77, 77, 0, 0.7), 0 6px 20px 6px rgba(100, 20, 211, 0.6);
+  padding: 7px;
+}
+/* -------------------------------
+    styles for the nav buttons
+  ------------------------------ */
+.navPic {
+  top: 50%;
   border-radius: 100%;
-  float: left;
-  padding: 2px;
-  height: 26px;
-  width: 26px;
+  box-shadow: 0 4px 8px 0 rgba(77, 77, 0, 0.7), 0 6px 20px 6px rgba(100, 20, 211, 0.6);
+  /* float: left; */
+  height: 50px;
+  width: 50px;
   border: 0;
+  margin: 2px 10px;
 }
 .focus {
-  color: cyan;
-  text-shadow: 10px 10px magenta;
-  height: 40px;
-  width: 40px;
+  border-radius: 100%;
+  box-shadow: 0 6px 10px 0 rgba(77, 77, 0, 0.7), 0 8px 24px 6px rgba(100, 20, 211, 0.6);
+  height: 70px;
+  width: 70px;
+  border: 0;
+  /* margin: 0 auto; */
 }
-.focusPerm {
-  color: cyan;
-  text-shadow: 10px 10px magenta;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
