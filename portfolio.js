@@ -71,28 +71,35 @@ const loadProjects = () => {
   let $project = $(`<h4>`)
     .text(`Rock, Paper, Scossors Game`)
     .appendTo($container)
-
   let $input2 = $(`<input>`)
     .attr(`type`, `submit`)
     .attr(`id`, `userClick`)
     .attr(`onClick`, `rockGame()`)
     .appendTo($container)
-
-
-
 }
+
 
 //--------------------------
 //  Rock Paper Scissor game
 //--------------------------
 
+const rockChoices = [`ROCK`, `PAPER`, `SCISSOR`]
 const rockGame = () => {
+  //for random rock paper or scissor
+const randomMove = () => {
+  return (rockChoices[Math.floor(Math.random()*rockChoices.length)])
+  }
+
+
   clearHome()
   let $gameBoard = $(`<div>`)
     .addClass(`gameBoard`)
     .appendTo(`.main`)
-  let $intro = $(`<h3>`)
+  let $title = $(`<h3>`)
     .text(`Rock, Paper, Scissors`)
+    .appendTo($gameBoard)
+  let $intro = $(`<p>`)
+    .text(`Type your response and press the button`)
     .appendTo($gameBoard)
   let $input = $(`<input>`)
     .attr(`type`, `text`)
@@ -101,14 +108,51 @@ const rockGame = () => {
     .appendTo($gameBoard)
   let $input3 = $(`<input>`)
     .attr(`type`, `submit`)
-    .attr(`id`, `userClick`)
-    .attr(`onClick`, `rockGame()`)
+    .attr(`id`, `gameClick`)
+    // .attr(`onClick`, `rockGame()`)
     .appendTo($gameBoard)
     console.log(`lets go`)
 
-    $('#userClick').on(`click`, () => {
+    $('#gameClick').on(`click`, () => {
       const $choice = $(`#userInput`).val()
-      rockGame($choice)
+      console.log($choice)
+      randomMove()
+      let computerMove = randomMove()
+      console.log(computerMove)
+      console.log(randomMove)
+      if ($choice.toUpperCase() === computerMove) {
+        let $tie = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}.  Tie game`)
+          .appendTo($gameBoard)
+      } else if ($choice.toUpperCase() === `ROCK` && computerMove === `SCISSOR`) {
+        let $op1 = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Wins`)
+          .appendTo($gameBoard)
+      } else if ($choice.toUpperCase() === `ROCK` && computerMove === `PAPER`) {
+        let $op2 = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Looses`)
+          .appendTo($gameBoard)
+      } else if ($choice.toUpperCase() === `PAPER` && computerMove === `SCISSOR`) {
+        let $op3 = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Looses`)
+          .appendTo($gameBoard)
+      } else if ($choice.toUpperCase() === `PAPER` && computerMove === `ROCK`) {
+        let $op1 = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Wins`)
+          .appendTo($gameBoard)
+      } else if ($choice.toUpperCase() === `SCISSOR` && computerMove === `PAPER`) {
+        let $op1 = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Wins`)
+          .appendTo($gameBoard)
+      } else if ($choice.toUpperCase() === `SCISSOR` && computerMove === `ROCK`) {
+        let $op1 = $(`<p>`)
+          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Looses`)
+          .appendTo($gameBoard)
+      } else {
+        let op7 = $(`<p>`)
+        .text(`You typed ${$choice}. Please type 'rock' 'paper' or 'scissor'`)
+        .appendTo($gameBoard)
+      }
     })
 }
 
