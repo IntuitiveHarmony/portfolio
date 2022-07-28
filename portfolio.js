@@ -76,7 +76,6 @@ const loadProjects = () => {
   let $input = $(`<input>`)
     .attr(`type`, `text`)
     .attr(`id`, `userInput`)
-
     .attr(`placeholder`, `Rock, Paper or Scissor`)
     .appendTo($container)
   let $input2 = $(`<input>`)
@@ -84,16 +83,24 @@ const loadProjects = () => {
     .attr(`id`, `userClick`)
     .attr(`onClick`, `rockGame()`)
     .appendTo($container)
+
+
+
 }
 
 //--------------------------
 //  Rock Paper Scissor game
 //--------------------------
 
-
 const rockGame = () => {
+  let $gameDiv = $(`<div>`)
+    .appendTo(`#main`)
   let $choice = $(`#userInput`).val()
-  console.log($choice)
+  let $trial = $(`<p>`)
+  .text(`what`)
+  .appendTo($gameDiv)
+
+
 }
 
 
@@ -150,7 +157,6 @@ const clearHome = () => {
 }
 
 
-
 $(() => {
 
   //----------
@@ -162,15 +168,6 @@ $(() => {
   $(`#nav2`).on(`click`, loadResume)       //  Resume Button
   $(`#nav3`).on(`click`, loadProjects)     //  Projects Button
   $(`#nav4`).on(`click`, loadLinks)        //  Bio Button
-
-  //-------------------------------
-  //  Input from user for RPS game
-  //-------------------------------
-  // $(`#userInput`).click(function () {
-  //   $(this).val()
-  //   console.log(val)
-  // })
-
 
 
     //---------------------------------------------------
