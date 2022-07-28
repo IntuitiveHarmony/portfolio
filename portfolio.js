@@ -29,7 +29,11 @@ const loadBio = () => {
     .text(`Constant Exploration`)
     .appendTo($container)
   let $bio = $(`<p>`)
-    .text(`This is where my bio will go`)
+    .text(`Hello, my name is Jason.`)
+    .appendTo($container)
+  let $bioPic = $(`<img>`)
+    .addClass(`bioPic`)
+    .attr(`src`, `files/pictures/IMG_0779.jpg`)
     .appendTo($container)
 }
 
@@ -62,12 +66,37 @@ const loadProjects = () => {
     .addClass(`container`)
     .appendTo(`.main`)
   let $projectHeader = $(`<h3>`)
-    .text(`Varied Work History`)
+    .text(`Projects`)
     .appendTo($container)
-  let $project = $(`<p>`)
-    .text(`This is where my projects will go`)
+  let $project = $(`<h4>`)
+    .text(`Rock, Paper, Scossors Game`)
+    .appendTo($container)
+  let $scoreboard = $(`<div>`)
+    //  Make this a chart
+  let $input = $(`<input>`)
+    .attr(`type`, `text`)
+    .attr(`id`, `userInput`)
+
+    .attr(`placeholder`, `Rock, Paper or Scissor`)
+    .appendTo($container)
+  let $input2 = $(`<input>`)
+    .attr(`type`, `submit`)
+    .attr(`id`, `userClick`)
+    .attr(`onClick`, `rockGame()`)
     .appendTo($container)
 }
+
+//--------------------------
+//  Rock Paper Scissor game
+//--------------------------
+
+
+const rockGame = () => {
+  let $choice = $(`#userInput`).val()
+  console.log($choice)
+}
+
+
 
 
 //--------------
@@ -83,7 +112,7 @@ const loadLinks = () => {
     .text(`Here are some external links`)
     .appendTo($container)
   let $ltext = $(`<p>`)
-    .text(`more to follow if I ever decide to establish more of an online presence`)
+    .text(`more to follow if I ever decide to establish an online presence`)
     .appendTo($container)
   let $gitLink = $(`<a>`)
     .text(`Github - Intuitive Harmony`)
@@ -123,12 +152,25 @@ const clearHome = () => {
 
 
 $(() => {
+
+  //----------
+  //  Buttons
+  //----------
   loadHome() //Start with the welcome page
-  $(`.homeLink`).on(`click`, loadHome)  //  Home Button
-  $(`#nav1`).on(`click`, loadBio)       //  Bio Button
-  $(`#nav2`).on(`click`, loadResume)    //  Resume Button
-  $(`#nav3`).on(`click`, loadProjects)  //  Projects Button
-  $(`#nav4`).on(`click`, loadLinks)     //  Bio Button
+  $(`.homeLink`).on(`click`, loadHome)     //  Home Button
+  $(`#nav1`).on(`click`, loadBio)          //  Bio Button
+  $(`#nav2`).on(`click`, loadResume)       //  Resume Button
+  $(`#nav3`).on(`click`, loadProjects)     //  Projects Button
+  $(`#nav4`).on(`click`, loadLinks)        //  Bio Button
+
+  //-------------------------------
+  //  Input from user for RPS game
+  //-------------------------------
+  // $(`#userInput`).click(function () {
+  //   $(this).val()
+  //   console.log(val)
+  // })
+
 
 
     //---------------------------------------------------
@@ -136,10 +178,10 @@ $(() => {
     //---------------------------------------------------
   $(`.navPic`).hover(function() {
     $(this).addClass(`focus`)
-    hoverTextAdd()
+    // hoverTextAdd()
       }, function() {
         $(this).removeClass(`focus`).removeAttr(`id`, `current`)
-        hoverTextRemove()
+        // hoverTextRemove()
     })
 
 })

@@ -1,16 +1,22 @@
 body {
-  background-image: url(`./files/pictures/powershot 7-14 626_Fotor_ inverted.jpg`);
+
   background-color: cornflowerblue;
+  background-image: url('files/pictures/powershot 7-14 626_Fotor_ inverted.jpg');
+  background-position: -50px -50px ;
+  background-size: contain;
+  background-attachment: fixed;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
   color: rgb(92, 34, 134);
 
 }
 ul {
   list-style: none;
-  display: inline;
+  display: relative;
 }
-li img{
+li {
   display: inline;
-
+  position: static;
 }
 h2 {
   display: inline;
@@ -25,6 +31,9 @@ h3 {
   padding: 7px;
   font-family: Fantasy;
 }
+img {
+
+}
 /* -------------------------------
     styles for the links
   ------------------------------ */
@@ -36,37 +45,54 @@ a {
 /* -------------------------------
     styles for the containers
   ------------------------------ */
+
 .header {
+
+  display: inline-block;
   color: rgb(92, 34, 134);
   text-shadow: 3px 7px 6px RGB(255, 20, 147), 0px 0px 2px darkviolet;
-  background-color: RGBa(0, 191, 255, 0.9);
+  background-color: RGBa(0, 191, 255, 0.8);
   border: 0px solid mediumblue;
   border-radius: 6px;
   box-shadow: 0 4px 8px 0 rgba(77, 77, 0, 0.7), 0 6px 20px 6px rgba(100, 20, 211, 0.6);
+
   padding: 3px 20px;
   font-family: Fantasy;
 
 }
 .container {
+  margin top: 90px;
+  display: inline-block;
   clear: left;
   border: 0px solid mediumblue;
   border-radius: 6px;
   margin-left: 10px;
+  background-color: RGBa(0, 191, 255, 0.8);
   box-shadow: 0 4px 8px 0 rgba(77, 77, 0, 0.7), 0 6px 20px 6px rgba(100, 20, 211, 0.6);
-  padding: 7px;
+  padding: 7px 20px;
+
+}
+.bioPic {
+  opacity: .9;
+  max-width: 300px;
+  filter: hue-rotate(250deg) saturate(300%);
 }
 /* -------------------------------
     styles for the nav buttons
   ------------------------------ */
 .navPic {
+  /* overflow: hidden; */
   top: 50%;
   border-radius: 100%;
+  filter: hue-rotate(25) saturate(300%);
   box-shadow: 0 4px 8px 0 rgba(77, 77, 0, 0.7), 0 6px 20px 6px rgba(100, 20, 211, 0.6);
   /* float: left; */
   height: 50px;
   width: 50px;
   border: 0;
   margin: 2px 10px;
+  filter: saturate(300%);
+
 }
 .focus {
   border-radius: 100%;
