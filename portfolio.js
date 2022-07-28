@@ -71,13 +71,7 @@ const loadProjects = () => {
   let $project = $(`<h4>`)
     .text(`Rock, Paper, Scossors Game`)
     .appendTo($container)
-  let $scoreboard = $(`<div>`)
-    //  Make this a chart
-  let $input = $(`<input>`)
-    .attr(`type`, `text`)
-    .attr(`id`, `userInput`)
-    .attr(`placeholder`, `Rock, Paper or Scissor`)
-    .appendTo($container)
+
   let $input2 = $(`<input>`)
     .attr(`type`, `submit`)
     .attr(`id`, `userClick`)
@@ -93,14 +87,29 @@ const loadProjects = () => {
 //--------------------------
 
 const rockGame = () => {
-  let $gameDiv = $(`<div>`)
-    .appendTo(`#main`)
-  let $choice = $(`#userInput`).val()
-  let $trial = $(`<p>`)
-  .text(`what`)
-  .appendTo($gameDiv)
+  clearHome()
+  let $gameBoard = $(`<div>`)
+    .addClass(`gameBoard`)
+    .appendTo(`.main`)
+  let $intro = $(`<h3>`)
+    .text(`Rock, Paper, Scissors`)
+    .appendTo($gameBoard)
+  let $input = $(`<input>`)
+    .attr(`type`, `text`)
+    .attr(`id`, `userInput`)
+    .attr(`placeholder`, `Rock, Paper or Scissor`)
+    .appendTo($gameBoard)
+  let $input3 = $(`<input>`)
+    .attr(`type`, `submit`)
+    .attr(`id`, `userClick`)
+    .attr(`onClick`, `rockGame()`)
+    .appendTo($gameBoard)
+    console.log(`lets go`)
 
-
+    $('#userClick').on(`click`, () => {
+      const $choice = $(`#userInput`).val()
+      rockGame($choice)
+    })
 }
 
 
