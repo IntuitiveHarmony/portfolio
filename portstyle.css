@@ -106,20 +106,28 @@ a {
   color: rgb(92, 34, 134);
 
 
-display: inline-block;
-background-color: RGBa(255, 255, 0, 0.6);
-border: 0px solid mediumblue;
-border-radius: 6px;
-margin-top: 17px;
-margin-right: 13px;
-margin-bottom: 17px;
-margin-left: 13px;
-box-shadow: 0 4px 8px 0 rgba(50, 77, 0, 0.7) inset , 0 6px 20px 6px rgba(48, 0, 111, 0.6) ;
-padding: 13px;
+  display: inline-block;
+  background-color: RGBa(100, 100, 255, 0.6);
+  border: 0px solid mediumblue;
+  border-radius: 6px;
+  margin-top: 17px;
+  margin-right: 13px;
+  margin-bottom: 17px;
+  margin-left: 13px;
+  box-shadow: 0 4px 8px 0 rgba(50, 77, 0, 0.7) inset , 0 6px 20px 6px rgba(48, 0, 111, 0.6) ;
+  padding: 13px;
 
 
 }
-
+.redGame {
+  background-color: RGBa(255, 70, 90, 0.7);
+}
+.greenGame {
+  background-color: RGBa(160, 255, 10, 0.6);
+}
+.yellowGame {
+    background-color: RGBa(255, 255, 0, 0.6);
+}
 
 
 

@@ -91,7 +91,7 @@ const randomMove = () => {
   }
 const clearHand = () => {
   $(`.hand`).empty()
-}
+  }
 
   clearHome()
   let $gameBoard = $(`<div>`)
@@ -122,39 +122,92 @@ const clearHand = () => {
       const $choice = $(`#userInput`).val()
       randomMove()
       clearHand()
+      $(`.gameBoard`).removeClass(`redGame`)   // Reset gameBoard back to original color
+      $(`.gameBoard`).removeClass(`greenGame`)  // ..
+      $(`.gameBoard`).removeClass(`yellowGame`)  // ..
       let computerMove = randomMove()
-      if ($choice.toUpperCase() === computerMove) {
+      if ($choice.toUpperCase() === computerMove) { //  Tie Game
         let $tie = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}.  Tie game`)
+          .text(`Player chose: ${$choice}`)
           .appendTo($hand)
+        let $tie2 = $(`<p>`)
+          .text(`Computer chose: ${computerMove}`)
+          .appendTo($hand)
+        let $tie3 = $(`<p>`)
+          .text(`Tie game`)
+          .appendTo($hand)
+        $(`.gameBoard`).addClass(`yellowGame`)
       } else if ($choice.toUpperCase() === `ROCK` && computerMove === `SCISSOR`) {
         let $op1 = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Wins`)
+          .text(`Player chose: ${$choice}`)
           .appendTo($hand)
-      } else if ($choice.toUpperCase() === `ROCK` && computerMove === `PAPER`) {
         let $op2 = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Looses`)
+          .text(`Computer chose: ${computerMove}`)
           .appendTo($hand)
-      } else if ($choice.toUpperCase() === `PAPER` && computerMove === `SCISSOR`) {
         let $op3 = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Looses`)
+          .text(`You Must Have Training!`)
           .appendTo($hand)
+        $(`.gameBoard`).addClass(`greenGame`)
+      } else if ($choice.toUpperCase() === `ROCK` && computerMove === `PAPER`) {
+        let $op1 = $(`<p>`)
+          .text(`Player chose: ${$choice}`)
+          .appendTo($hand)
+        let $op2 = $(`<p>`)
+          .text(`Computer chose: ${computerMove}`)
+          .appendTo($hand)
+        let $op3 = $(`<p>`)
+          .text(`Oh No!`)
+          .appendTo($hand)
+        $(`.gameBoard`).addClass(`redGame`)
+      } else if ($choice.toUpperCase() === `PAPER` && computerMove === `SCISSOR`) {
+        let $op1 = $(`<p>`)
+          .text(`Player chose: ${$choice}`)
+          .appendTo($hand)
+        let $op2 = $(`<p>`)
+          .text(`Computer chose: ${computerMove}`)
+          .appendTo($hand)
+        let $op3 = $(`<p>`)
+          .text(`Keep Practicing!`)
+          .appendTo($hand)
+        $(`.gameBoard`).addClass(`redGame`)
       } else if ($choice.toUpperCase() === `PAPER` && computerMove === `ROCK`) {
         let $op1 = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Wins`)
+          .text(`Player chose: ${$choice}`)
           .appendTo($hand)
+        let $op2 = $(`<p>`)
+          .text(`Computer chose: ${computerMove}`)
+          .appendTo($hand)
+        let $op3 = $(`<p>`)
+          .text(`Nicely Done!`)
+          .appendTo($hand)
+        $(`.gameBoard`).addClass(`greenGame`)
       } else if ($choice.toUpperCase() === `SCISSOR` && computerMove === `PAPER`) {
         let $op1 = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Wins`)
+          .text(`Player chose: ${$choice}`)
           .appendTo($hand)
+        let $op2 = $(`<p>`)
+          .text(`Computer chose: ${computerMove}`)
+          .appendTo($hand)
+        let $op3 = $(`<p>`)
+          .text(`Sweet!`)
+          .appendTo($hand)
+        $(`.gameBoard`).addClass(`greenGame`)
       } else if ($choice.toUpperCase() === `SCISSOR` && computerMove === `ROCK`) {
         let $op1 = $(`<p>`)
-          .text(`Player chose: ${$choice} and the computer chose: ${computerMove}. Player Looses`)
+          .text(`Player chose: ${$choice}`)
           .appendTo($hand)
+        let $op2 = $(`<p>`)
+          .text(`Computer chose: ${computerMove}`)
+          .appendTo($hand)
+        let $op3 = $(`<p>`)
+          .text(`Better Luck Next Time!`)
+          .appendTo($hand)
+        $(`.gameBoard`).addClass(`redGame`)
       } else {
         let op7 = $(`<p>`)
         .text(`You typed ${$choice}. Please type 'rock' 'paper' or 'scissor'`)
         .appendTo($hand)
+        $(`.gameBoard`).addClass(`yellowGame`)
       }
     })
 }
