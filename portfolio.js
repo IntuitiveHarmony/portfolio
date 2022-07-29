@@ -86,13 +86,12 @@ const loadProjects = () => {
 const rockChoices = [`ROCK`, `PAPER`, `SCISSOR`]
 const rockGame = () => {
   //for random rock paper or scissor
-const randomMove = () => {
-  return (rockChoices[Math.floor(Math.random()*rockChoices.length)])
-  }
-const clearHand = () => {
-  $(`.hand`).empty()
-  }
-
+  const randomMove = () => {
+    return (rockChoices[Math.floor(Math.random()*rockChoices.length)])
+    }
+    const clearHand = () => {
+      $(`.hand`).empty()
+    }
   clearHome()
   let $gameBoard = $(`<div>`)
     .addClass(`gameBoard`)
@@ -111,10 +110,7 @@ const clearHand = () => {
   let $input3 = $(`<input>`)
     .attr(`type`, `submit`)
     .attr(`id`, `gameClick`)
-    // .attr(`onClick`, `rockGame()`)
     .appendTo($gameBoard)
-
-
     $('#gameClick').on(`click`, () => {
       let $hand = $(`<div>`)
         .addClass(`hand`)
@@ -208,11 +204,9 @@ const clearHand = () => {
         .text(`You typed ${$choice}. Please type 'rock' 'paper' or 'scissor'`)
         .appendTo($hand)
         $(`.gameBoard`).addClass(`yellowGame`)
-      }
+      } //  Mistype
     })
 }
-
-
 
 
 //--------------
@@ -289,7 +283,6 @@ $(() => {
         $(this).removeClass(`focus`).removeAttr(`id`, `current`)
         // hoverTextRemove()
     })
-
 })
 
 
