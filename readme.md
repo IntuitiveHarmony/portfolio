@@ -1,6 +1,6 @@
-This is a container for some of the projects that I have worked on in the past.
 # Jason Horst Portfolio
-[My Site](https://celadon-cannoli-9eead4.netlify.app/)
-In this project I wanted to recreate a personal website that I made for myself about 6 years ago when I first became interested in coding.  At the time I was trying to teach myself using tutorials and part of a Coursera course on HTML and CSS.  This course at General Assembly is the first time I've coded since then.   
-## Technologies Used
-My old site used CSS for all of the interactions like hovers, animations and clicks.  At the time I had no idea how to write javaScript.  My goal was to re-write this site using my newly gained knowledge. At first I started to make an individual page HTML page
+In this [project](https://celadon-cannoli-9eead4.netlify.app/) I wanted to recreate a personal website that I made for myself about 6 years ago when I first became interested in coding.  At the time I was trying to teach myself using tutorials and part of a Coursera course on HTML and CSS.  This course at General Assembly is the first time I've coded since then.   
+## Technologies/Approach
+My old site used CSS for all of the interactions like hovers, animations and clicks.  At the time I had no idea how to write javaScript.  My goal was to re-write this site using my newly gained knowledge.  All of the CSS was basically pulled from the old code and adjusted in minor ways as I needed. At first I started to make an individual HTML file for each page of my site (resume.html, about.html etc...) everything started to become convoluted for me so I abandoned this approach.  I have a single HTML file that contains a few divs with classes for me to attach what ever I wanted to later using javaScript functions and jQuery. This project is contained within a Github [repository](https://github.com/IntuitiveHarmony/portfolio) and deployed using Netlify.
+## Unsolved Issues
+Aside from random typos, scoping and traversing issues, the main issue I had that still presists in one way or another is getting the HTML elements to lay out how I want them to on the page.  I know that this has to do with a lot of the settings in CSS, I tried to only focus on basic positioning and styling issues so that I could focus on the functionality of the javaScript and jQuery parts
