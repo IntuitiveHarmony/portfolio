@@ -31,12 +31,99 @@ const loadBio = () => {
   let $bio = $(`<p>`)
     .text(`Hello, my name is Jason.`)
     .appendTo($container)
-  let $bioPic = $(`<img>`)
-    .addClass(`bioPic`)
-    .attr(`src`, `files/pictures/IMG_0779.jpg`)
+  let $carousel = $(`<div>`)
+    .addClass(`carousel`)
     .appendTo($container)
+  let $picContainer = $(`<figure>`)
+    .addClass(`bioPic`)
+    .addClass(`picContainer`)
+    .appendTo($carousel)
+
+  let $bioPic = $(`<img>`)
+    .attr(`id`, `hueFilter`)
+    .attr(`src`, `files/pictures/IMG_0779.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic2 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_2161 2.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic3 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_1981 2.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic4 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_2174 2.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic5 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_2094 2.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic6 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_0606.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic7 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_2076 2.jpeg`)
+    .appendTo($picContainer)
+
+  let $bioPic8 = $(`<img>`)
+    .attr(`src`, `files/pictures/IMG_0287 2.jpeg`)
+    .appendTo($picContainer)
+
+  let $leftBtnContainer = $(`<div>`)
+    .addClass(`leftBtn`)
+    .appendTo($container)
+  let $leftBtn = $(`<span>`)  //  buttons came from https://linearicons.com/free
+    .addClass(`lnr lnr-arrow-left-circle`)
+    .appendTo($leftBtnContainer)
+  let $rightBtnContainer = $(`<div>`)
+    .addClass(`rightBtn`)
+    .appendTo($container)
+  let $rightBtn = $(`<span>`)  //  buttons came from https://linearicons.com/free
+    .addClass(`lnr lnr-arrow-right-circle`)
+    .appendTo($rightBtnContainer)
+  //  Count steps in picture carousel
+  let currentImgIndex = 0
+  //  Length of carousel
+  let numOfImages = $(`.bioPic`).children().length - 1
+  //  Scroll left through pictures hiding current one and display next
+  $('.rightBtn').on('click', () => {
+    $(`.bioPic`).children()
+      .eq(currentImgIndex)
+      .css(`display`, `none`)
+  //  Loop back through to first Picture at the end of list
+  if(currentImgIndex < numOfImages) {
+    currentImgIndex ++
+    } else {
+      currentImgIndex = 0
+    }
+  $(`.bioPic`).children()
+    .eq(currentImgIndex)
+    .css(`display`, `block`)
+    })
+  //  Scroll left through pictures hiding current one and display next
+  $('.leftBtn').on('click', () => {
+    $('.bioPic').children()
+      .eq(currentImgIndex)
+      .css('display', 'none')
+  //  Loop back through to first Picture at the end of list
+  if(currentImgIndex > 0) {
+    currentImgIndex --
+    } else {
+      currentImgIndex = numOfImages
+    }
+  $('.bioPic').children()
+      .eq(currentImgIndex)
+        .css('display', 'block')
+  })
+
+
+  // $(`.rightBtn`).on(`click`, moveForward)
 }
 
+// }
 
 //--------------
 //  Resume page
@@ -271,6 +358,8 @@ $(() => {
   $(`#nav2`).on(`click`, loadResume)       //  Resume Button
   $(`#nav3`).on(`click`, loadProjects)     //  Projects Button
   $(`#nav4`).on(`click`, loadLinks)        //  Bio Button
+
+
 
 
     //---------------------------------------------------

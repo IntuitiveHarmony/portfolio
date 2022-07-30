@@ -1,7 +1,7 @@
 body {
 
   background-color: cornflowerblue;
-  background-image: url('files/pictures/powershot 7-14 626_Fotor_ inverted.jpg');
+  background-image: url('files/pictures/powershot 7-14 626_Fotor_ inverted.jpeg');
   background-position: -50px -50px ;
   background-size: contain;
   background-attachment: fixed;
@@ -72,10 +72,31 @@ a {
   padding: 7px 20px;
 
 }
-.bioPic {
+#hueFilter {
   opacity: .9;
   max-width: 300px;
   filter: hue-rotate(250deg) saturate(300%);
+}
+.bioPic {
+  max-width: 300px;
+  display: block;
+  content: `su`;
+}
+.bioPic img {
+  max-width: 300px;
+  display: none;
+}
+.bioPic img:first-of-type {
+  max-width: 300px;
+  display: inline;
+}
+.bioPic p {
+  max-width: 300px;
+  display: none;
+}
+.bioPic p:first-of-type {
+  max-width: 300px;
+  display: inline;
 }
 /* -------------------------------
     styles for the nav buttons
@@ -128,7 +149,24 @@ a {
 .yellowGame {
     background-color: RGBa(255, 255, 0, 0.6);
 }
-
+.leftBtn{
+  display: inline;
+}
+.rightBtn{
+  display: inline;
+}
+.lnr-arrow-left-circle { /*These buttons came from https://linearicons.com/free */
+  color: RGB(255, 20, 147);
+  font-size: 45px;
+  display: inline;
+  align-self: center;
+}
+.lnr-arrow-right-circle {  /*These buttons came from https://linearicons.com/free */
+  color: RGB(255, 20, 147);
+  font-size: 45px;
+  display: inline;
+  align-self: center;
+}
 
 
 
