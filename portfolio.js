@@ -28,9 +28,6 @@ const loadBio = () => {
   let $bioHeader = $(`<h3>`)
     .text(`Constant Exploration`)
     .appendTo($container)
-  // let $bio = $(`<p>`)
-  //   .text(`Hello, my name is Jason.`)
-  //   .appendTo($container)
   let $carousel = $(`<div>`)
     .addClass(`carousel`)
     .appendTo($container)
@@ -38,7 +35,7 @@ const loadBio = () => {
     .addClass(`bioPic`)
     .addClass(`picContainer`)
     .appendTo($carousel)
-
+//  Beginning of Carousel
   let $bio = $(`<p>`)
       .text(`Hello, my name is Jason.`)
       .appendTo($picContainer)
@@ -46,62 +43,50 @@ const loadBio = () => {
     .attr(`id`, `hueFilter`)
     .attr(`src`, `files/pictures/IMG_0779.jpeg`)
     .appendTo($bio)
-
-    let $bio2 = $(`<p>`)
-        .text(`I am from Colorado and I love nature`)
+  let $bio2 = $(`<p>`)
+      .text(`I am from Colorado and I love nature`)
         .appendTo($picContainer)
   let $bioPic2 = $(`<img>`)
     .attr(`src`, `files/pictures/IMG_2161 2.jpeg`)
     .appendTo($bio2)
-
-  //   let $bio5 = $(`<p>`)
-  //       .text(`I make noise using these devices`)
-  //       .appendTo($picContainer)
-  // let $bioPic5 = $(`<img>`)
-  //   .attr(`src`, `files/pictures/IMG_0767 2.jpeg`)
-  //   .appendTo($bio5)
-
-    let $bio3 = $(`<p>`)
-        .text(`I enjoy being by the rivers, I like the way they sound`)
-        .appendTo($picContainer)
+  let $bio3 = $(`<p>`)
+    .text(`I enjoy being by the rivers.  I like the way they sound`)
+    .appendTo($picContainer)
   let $bioPic3 = $(`<img>`)
     .attr(`src`, `files/pictures/IMG_1981 2.jpeg`)
     .appendTo($bio3)
-
-    let $bio4 = $(`<p>`)
-        .text(`Forraging is fun! Here is a wild strawberry plant, no fruit yet`)
-        .appendTo($picContainer)
+  let $bio4 = $(`<p>`)
+    .text(`Forraging is fun! Here is a wild strawberry plant, no fruit yet`)
+    .appendTo($picContainer)
   let $bioPic4 = $(`<img>`)
     .attr(`src`, `files/pictures/IMG_2174 2.jpeg`)
     .appendTo($bio4)
-
   let $bio6 = $(`<p>`)
-      .text(`Taking my dogs into the woods`)
-      .appendTo($picContainer)
+    .text(`Taking my dogs into the woods`)
+    .appendTo($picContainer)
   let $bioPic6 = $(`<img>`)
     .attr(`src`, `files/pictures/IMG_0606.jpeg`)
     .appendTo($bio6)
-
-    let $bio7 = $(`<p>`)
-        .text(`I enjoy nature so much I started recording it`)
-        .appendTo($picContainer)
+  let $bio7 = $(`<p>`)
+    .text(`I enjoy nature so much I started recording it`)
+    .appendTo($picContainer)
   let $bioPic7 = $(`<img>`)
     .attr(`src`, `files/pictures/IMG_2076 2.jpeg`)
     .appendTo($bio7)
-
-    let $bio8 = $(`<p>`)
-        .text(`If I ever have time again I will share more of the recordings with you!`)
-        .appendTo($picContainer)
-        let $soundContainer = $(`<div>`)
-          .addClass(`player`)
-          .appendTo($bio8)
-        let $bioSound = $(`<HTML>`)
-          .html(`<iframe width="100%" class ="player" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1314750247&color=%23d03ce4&inverse=true&auto_play=false&show_user=true"></iframe><div class ="player" style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/invisiblebirds" title="Invisible Birds" target="_blank" style="color: #cccccc; text-decoration: none;">Invisible Birds</a> · <a href="https://soundcloud.com/invisiblebirds/colorado-stream" title="Colorado Stream" target="_blank" style="color: #cccccc; text-decoration: none;">Colorado Stream</a></div>`)
-          .appendTo($soundContainer)
+  let $bio8 = $(`<p>`)
+    .text(`If I ever have time again I will share more of the recordings with you!`)
+    .appendTo($picContainer)
+  let $soundContainer = $(`<div>`)
+    .addClass(`player`)
+    .appendTo($bio8)
+  // Embeded media from my SoundClound page
+  let $bioSound = $(`<HTML>`)
+    .html(`<iframe width="100%" class ="player" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1314750247&color=%23d03ce4&inverse=true&auto_play=false&show_user=true"></iframe><div class ="player" style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/invisiblebirds" title="Invisible Birds" target="_blank" style="color: #cccccc; text-decoration: none;">Invisible Birds</a> · <a href="https://soundcloud.com/invisiblebirds/colorado-stream" title="Colorado Stream" target="_blank" style="color: #cccccc; text-decoration: none;">Colorado Stream</a></div>`)
+    .appendTo($soundContainer)
   let $bioPic8 = $(`<img>`)
     .attr(`src`, `files/pictures/river.gif`)
     .appendTo($bio8)
-
+// Buttons for the carousel
   let $leftBtnContainer = $(`<div>`)
     .addClass(`leftBtn`)
     .appendTo($container)
@@ -118,7 +103,7 @@ const loadBio = () => {
   let currentImgIndex = 0
   //  Length of carousel
   let numOfImages = $(`.bioPic`).children().length - 1
-  //  Scroll left through pictures hiding current one and display next
+  //  Scroll right through pictures hiding current one and display next
   $('.rightBtn').on('click', () => {
     $(`.bioPic`).children()
       .eq(currentImgIndex)
@@ -133,7 +118,7 @@ const loadBio = () => {
     .eq(currentImgIndex)
     .css(`display`, `block`)
     })
-  //  Scroll left through pictures hiding current one and display next
+  //  Scroll left through pictures hiding current one and display previous
   $('.leftBtn').on('click', () => {
     $('.bioPic').children()
       .eq(currentImgIndex)
@@ -148,12 +133,8 @@ const loadBio = () => {
       .eq(currentImgIndex)
         .css('display', 'block')
   })
-
-
-  // $(`.rightBtn`).on(`click`, moveForward)
 }
 
-// }
 
 //--------------
 //  Resume page
@@ -339,7 +320,7 @@ const loadLinks = () => {
     .text(`Here are some external links`)
     .appendTo($container)
   let $ltext = $(`<p>`)
-    .text(`more to follow if I ever decide to establish an online presence`)
+    .text(`I release audio under the name Invisible Birds`)
     .appendTo($container)
   let $gitLink = $(`<a>`)
     .text(`Github - Intuitive Harmony`)
@@ -351,7 +332,16 @@ const loadLinks = () => {
     .attr(`href`, `https://soundcloud.com/invisiblebirds`)
     .attr(`target`, `blank`)
     .appendTo($container)
-
+  let $appleLink = $(`<a>`)
+    .text(`iTunes - Invisible Birds`)
+    .attr(`href`, `https://music.apple.com/us/album/1596716534`)
+    .attr(`target`, `blank`)
+    .appendTo($container)
+  let $spotifyLink = $(`<a>`)
+    .text(`Spotify - Invisible Birds`)
+    .attr(`href`, `https://open.spotify.com/album/45QOA3KuhNgai3ixOwMKGh`)
+    .attr(`target`, `blank`)
+    .appendTo($container)
 }
 
 
