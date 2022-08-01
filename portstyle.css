@@ -31,9 +31,10 @@ h3 {
   padding: 7px;
   font-family: Fantasy;
 }
-img {
-
+p {
+  
 }
+
 /* -------------------------------
     styles for the links
   ------------------------------ */
@@ -77,10 +78,10 @@ a {
   max-width: 300px;
   filter: hue-rotate(250deg) saturate(300%);
 }
+
 .bioPic {
   max-width: 300px;
   display: block;
-  content: `su`;
 }
 .bioPic img {
   max-width: 300px;
@@ -91,11 +92,9 @@ a {
   display: inline;
 }
 .bioPic p {
-  max-width: 300px;
   display: none;
 }
 .bioPic p:first-of-type {
-  max-width: 300px;
   display: inline;
 }
 /* -------------------------------
@@ -192,8 +191,8 @@ a {
   border-radius: 6px;
   padding: 5px;
   margin-bottom: 10px;
-
 }
+
 
 
 
