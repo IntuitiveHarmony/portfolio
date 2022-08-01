@@ -31,7 +31,7 @@ const loadBio = () => {
   let $carousel = $(`<div>`)
     .addClass(`carousel`)
     .appendTo($container)
-  let $picContainer = $(`<figure>`)
+  let $picContainer = $(`<div>`)
     .addClass(`bioPic`)
     .addClass(`picContainer`)
     .appendTo($carousel)
@@ -149,7 +149,7 @@ const loadResume = () => {
     .text(`Varied Work History`)
     .appendTo($container)
   let $resume = $(`<p>`)
-    .text(`This is where my resume will go`)
+    .text(`I have professional experience in HVAC and Plumbing service and repair, restaurant managment`)
     .appendTo($container)
 }
 
@@ -169,9 +169,11 @@ const loadProjects = () => {
   let $project = $(`<h4>`)
     .text(`Rock, Paper, Scossors Game`)
     .appendTo($container)
-  let $input2 = $(`<input>`)
-    .attr(`type`, `submit`)
-    .attr(`id`, `userClick`)
+  let $input2 = $(`<div>`)
+    .text(`PLAY`)
+    .addClass(`playButton`)
+    // .attr(`type`, `submit`)
+    // .attr(`id`, `userClick`)
     .attr(`onClick`, `rockGame()`)
     .appendTo($container)
 }
@@ -378,6 +380,7 @@ $(() => {
   $(`#nav2`).on(`click`, loadResume)       //  Resume Button
   $(`#nav3`).on(`click`, loadProjects)     //  Projects Button
   $(`#nav4`).on(`click`, loadLinks)        //  Bio Button
+  $(`#userClick`).on(`click`, rockGame)
 
 
 
